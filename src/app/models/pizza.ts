@@ -1,10 +1,10 @@
 export interface Pizza{
-    id: number;
+    id: string;
     type: string;
     price: number;
     name: string;
     image: string;
     description: string;
     ingredients: string;
-    topping: string;
+    topping: string[];
 }
