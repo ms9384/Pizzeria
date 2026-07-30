@@ -1,5 +1,77 @@
-.home-heading{
+.our-story-heading{
     text-align: center;
-    font-size: 30px;
+    font-size: 35px;
     margin-top: 20px;
+}
+
+.our-story-content{
+    margin: 0px 75px;
+    text-align: justify;
+    line-height: 25px;
+}
+
+.ingredients{
+    margin-top: 20px;
+    display: flex;
+    margin: 0px 75px;
+}
+
+.ingredients-img img{
+    margin-top: 20px;
+    width: 525px;
+
+}
+
+.ingredients-heading{
+    font-size: 25px;
+    text-align: left;
+    margin: 100px 0 0 100px;
+
+}
+
+.ingredients-content{
+    margin: 30px 0 0 100px;
+    text-align: justify;
+    line-height: 25px;
+}
+
+.our-chefs{
+    display: flex;
+    margin: 0px 75px;
+}
+
+.our-chefs-heading{
+    font-size: 25px;
+    text-align: left;
+    margin: 145px 100px 0 0;
+}
+
+.our-chefs-content{
+    text-align: justify;
+    line-height: 25px;
+    margin: 30px 95px 0 0;
+}
+
+.our-chefs-img img{
+    width: 600px;
+    margin-right: 85px;
+}
+
+.delivery{
+    margin-top: 20px;
+    display: flex;
+    margin: 0px 75px;
+}
+
+.delivery-img img{
+    width: 525px;
+    height: 375px;
+    margin-top: 20px;
+}
+
+.delivery-heading{
+    font-size: 25px;
+    text-align: center;
+    margin: 195px 0 0 102px;
+
 }
