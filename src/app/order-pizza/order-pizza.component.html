@@ -1,1 +1,32 @@
-<p>order-pizza works!</p>
+<div class="order-pizza-container">
+    <div class="order-pizza-card" *ngFor="let p of pizza">
+            <div class="order-pizza-details1">
+                <h2 class="order-pizza-name">{{ p.name }}</h2>
+
+                <div class="order-pizza-type" [ngClass]="p.type === 'veg'? 'green':'red'">
+                    
+                </div>
+
+                <h3 class="order-pizza-price">{{ p.price | currency:"INR" }}</h3>
+            </div>
+
+            <div class="order-pizza-details2">
+            <p>{{ p.description }}</p>
+
+            <p>
+                <b>Ingredients:</b> {{p.ingredients}}
+            </p>
+
+            <p>
+                <b>Toppings:</b> {{ p.topping }}
+            </p>
+
+        </div>
+
+        <div class="order-pizza-img">
+            <img [src]="p.image">
+      
+        <button (click)="addToCart(p)">Add to Cart</button>
+        </div>
+    </div>
+</div>

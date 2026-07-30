@@ -1,0 +1,77 @@
+.order-pizza-container{
+    display:grid;
+    grid-template-columns: 1fr 0.5fr;
+    gap: 10px;
+    margin: 20px 100px;
+}
+
+.order-pizza-card{
+    display:flex;
+    justify-content:space-between;
+    box-shadow: 2px 2px 2px 2px grey;
+    padding: 10px;
+    text-align: left;
+    line-height: 25px;
+}
+
+.order-pizza-details1{
+    margin-top: -10px;
+    margin-left: 15px;
+}
+
+.order-pizza-name{
+    line-height: 35px;
+}
+
+.order-pizza-type{
+    width: 20px;
+    height: 20px;
+    margin: -20px 0 0 30px;
+}
+
+.order-pizza-price{
+    margin-top: 40px;
+}
+
+.green{
+    background-color: green;
+}
+
+.red{
+    background-color: red;
+}
+
+.order-pizza-details2{
+    margin: -2px 25px;
+    text-align: left;
+}
+
+.order-pizza-card h2{
+    font-weight: bold;
+}
+
+.order-pizza-img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.order-pizza-img img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-top: 15px;
+}
+
+button{
+    margin-top: 10px;
+    background-color: rgb(255, 187, 0);
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;  
+    border-radius: 5px;
+    border: none;  
+    font-size: 15px;
+    cursor: pointer;
+}

@@ -39,9 +39,10 @@
     padding: 10px;
     display: flex;
     align-items: center;  
-    border-radius: 2px;
+    border-radius: 5px;
     border: none;  
     font-size: 20px;
+    cursor: pointer;
 }
 
 .cart-img img{

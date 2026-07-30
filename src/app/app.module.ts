@@ -9,6 +9,8 @@ import { OrderPizzaComponent } from './order-pizza/order-pizza.component';
 import { BuildPizzaComponent } from './build-pizza/build-pizza.component';
 import { CartComponent } from './cart/cart.component';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { RouterModule } from '@angular/router';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
