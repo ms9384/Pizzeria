@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthenticationService } from '../authentication.service';
 
 @Component({
   selector: 'app-signup',
@@ -7,4 +9,43 @@ import { Component } from '@angular/core';
 })
 export class SignupComponent {
 
+  username = '';
+  email = '';
+  password = '';
+  confirmPassword = '';
+
+  errorMessage = '';
+
+  constructor(
+    private authService: AuthenticationService,
+    private router: Router
+  ) {}
+
+  signup(): void {
+
+    if (
+      !this.username ||
+      !this.email ||
+      !this.password ||
+      !this.confirmPassword
+    ) {
+      this.errorMessage = 'Please fill all the fields.';
+      return;
+    }
+
+    if (this.password !== this.confirmPassword) {
+      this.errorMessage = 'Passwords do not match.';
+      return;
+    }
+
+    this.authService.signup(
+      this.username,
+      this.email,
+      this.password
+    );
+
+    alert('Signup successful!');
+
+    this.router.navigate(['/login']);
+  }
 }

@@ -1,1 +1,49 @@
-<p>signup works!</p>
+<div class="auth-container">
+
+    <div class="auth-box">
+
+        <h1>Create Account</h1>
+
+        <p class="subtitle">
+            Sign up to order your favourite pizza
+        </p>
+
+        <input
+            type="text"
+            placeholder="Username"
+            [(ngModel)]="username">
+
+        <input
+            type="email"
+            placeholder="Email"
+            [(ngModel)]="email">
+
+        <input
+            type="password"
+            placeholder="Password"
+            [(ngModel)]="password">
+
+        <input
+            type="password"
+            placeholder="Confirm Password"
+            [(ngModel)]="confirmPassword">
+
+        <p class="error" *ngIf="errorMessage">
+            {{ errorMessage }}
+        </p>
+
+        <button (click)="signup()">
+            Sign Up
+        </button>
+
+        <p class="switch">
+            Already have an account?
+
+            <a routerLink="/login">
+                Login
+            </a>
+        </p>
+
+    </div>
+
+</div>

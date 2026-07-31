@@ -199,20 +199,22 @@
 .clear{
     width: 135px;
     height: 55px;
-    margin: 20px 10px;
     border: none;
     cursor: pointer;
     font-size: 20px;
+    border-radius: 5px;
 }
 
 .pay{
     background: #f8b400;
     color: black;
+    margin-left: 70px;
 }
 
 .clear{
     background: #23252d;
     color: white;
+    margin-right: 70px;
 }
 
 .pay:hover{

@@ -1,1 +1,39 @@
-<p>login works!</p>
+<div class="auth-container">
+
+    <div class="auth-box">
+
+        <h1>Login</h1>
+
+        <p class="subtitle">
+            Welcome back to Pizzeria!
+        </p>
+
+        <input
+            type="email"
+            placeholder="Email"
+            [(ngModel)]="email">
+
+        <input
+            type="password"
+            placeholder="Password"
+            [(ngModel)]="password">
+
+        <p class="error" *ngIf="errorMessage">
+            {{ errorMessage }}
+        </p>
+
+        <button (click)="login()">
+            Login
+        </button>
+
+        <p class="switch">
+            Don't have an account?
+
+            <a routerLink="/signup">
+                Sign Up
+            </a>
+        </p>
+
+    </div>
+
+</div>
