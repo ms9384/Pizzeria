@@ -22,7 +22,7 @@
 }
 
 .nav-links{
-    margin-right: 710px;
+    margin-right: 650px;
 }
 
 .nav-links a{
@@ -30,7 +30,7 @@
     text-decoration: none;
     font-size: 20px;
     font-weight: 200;
-    margin-right: 37.5px;
+    margin-right: 35px;
 }
 
 .nav-cart-btn button{
@@ -45,10 +45,50 @@
     cursor: pointer;
 }
 
+.shopping-cart-btn{
+    background:#f8b400;
+    border:none;
+    border-radius:6px;
+    padding:10px 18px;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    cursor:pointer;
+}
+
+.cart-icon{
+    width:22px;
+    height:22px;
+}
+
+.shopping-cart-btn span{
+    color:white;
+    font-size:18px;
+    font-weight:500;
+}
+
+.black-text{
+    color:black !important;
+}
+
+.cart-count{
+    background:#222;
+    color:white !important;
+    min-width:28px;
+    height:28px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:4px;
+    font-weight:bold;
+}
+
 .cart-count{
     background: black;
     color: white;
-    border-radius: 50%;
+    border-radius: 5px;;
     padding: 3px 8px;
     font-size: 14px;
     margin-left: 8px;

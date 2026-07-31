@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartItem, CartService } from '../cart.service';
+import { Pizza } from '../models/pizza';
 
 @Component({
   selector: 'app-cart',
@@ -79,5 +80,14 @@ export class CartComponent implements OnInit {
   pay() {
     alert("Payment Successful!");
     this.clearCart();
+  }
+
+  getType(pizza:Pizza){
+    if(pizza.type==='veg'){
+      return 'assets/images/veg.jpg';
+    }
+    else{
+      return 'assets/images/nonveg.jpg';
+    }
   }
 }

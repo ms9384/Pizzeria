@@ -14,14 +14,29 @@
    </div>
 
    <div class="nav-cart-btn">
-    <button routerLink="/cart">
-        <div class="cart-img">
-            <img src="assets/images/cart-white.png" title="cart image">
-        </div> 
-        Shopping Cart 
-        <span class="cart-count">
-            {{ cartService.getCartCount() }}
+    <button
+        class="shopping-cart-btn"
+        routerLink="/cart">
+
+        <img
+            [src]="isCartPage()
+            ? 'assets/images/cart-black.png'
+            : 'assets/images/cart-white.png'"
+            class="cart-icon">
+
+        <span
+            [class.black-text]="isCartPage()">
+
+            Shopping Cart
+
         </span>
-    </button>
+
+        <span class="cart-count">
+
+            {{ cartService.getCartCount() }}
+
+        </span>
+
+        </button>
    </div>
 </nav>

@@ -10,6 +10,9 @@ import { BuildPizzaComponent } from './build-pizza/build-pizza.component';
 import { CartComponent } from './cart/cart.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { SplashScreenComponent } from './splash-screen/splash-screen.component';
+import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -19,7 +22,10 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     OrderPizzaComponent,
     BuildPizzaComponent,
-    CartComponent
+    CartComponent,
+    SplashScreenComponent,
+    SignupComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

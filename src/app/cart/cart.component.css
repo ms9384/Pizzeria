@@ -8,15 +8,16 @@
 }
 
 .cart-left{
-    flex: 2.3;
+    flex: 2;
     background: #fff;
     border: 1px solid #d8d8d8;
+    box-shadow: 1px 1px 3px 2px #9ba5b0;
 }
 
 .cart-heading{
     margin: 0;
     padding: 22px;
-    font-size: 42px;
+    font-size: 35px;
     font-weight: 400;
     border-bottom: 1px solid #ddd;
 }
@@ -30,9 +31,21 @@
 }
 
 .cart-item img{
-    width: 75px;
-    height: 75px;
+    width: 100px;
+    height: 100px;
+}
+
+.pizza-image img{
+    width: 35px;
+    height: 35px;
     object-fit: cover;
+}
+
+.pizza-type img{
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    margin: 0 30px;
 }
 
 .details{
@@ -40,14 +53,16 @@
 }
 
 .details h4{
-    margin: 0;
-    font-size: 28px;
+    margin: -20px 0 0 -20px;
+    font-size: 20px;
     font-weight: 600;
+    text-align: center;
 }
 
 .details p{
-    margin: 8px 0;
-    font-size: 22px;
+    margin: 10px 0 0 -10px;
+    font-size: 20px;
+    text-align: center;
 }
 
 .details small{
@@ -99,22 +114,23 @@
 }
 
 .delete{
-    background: none;
-    border: none;
-    color: crimson;
-    font-size: 26px;
+    width: 25px !important;
+    height: 25px !important;
+    object-fit: contain;
     cursor: pointer;
+    margin-left: 10px;
 }
 
 .delete:hover{
     transform: scale(1.1);
 }
 
-
 .summary{
-    width: 360px;
+    width: 500px;
+    height: 300px;
     border: 1px solid #d8d8d8;
     background: white;
+    box-shadow: 1px 1px 3px 2px #9ba5b0;
 }
 
 .summary h3{
@@ -142,10 +158,10 @@
 .summary h2{
     display: flex;
     justify-content: space-between;
-    padding: 22px;
-    margin: 0;
+    padding: 20px;
+    margin-left: 200px;
     font-size: 34px;
-    border-top: 1px solid #ddd;
+    
 }
 
 .ingredient-dropdown{
@@ -172,9 +188,9 @@
 }
 
 .subtotal{
-    text-align:right;
+    text-align: right;
     padding: 20px 30px;
-    font-size: 24px;
+    font-size: 22px;
     border-top: 1px solid #ddd;
     background: white;
 }
@@ -186,7 +202,7 @@
     margin: 20px 10px;
     border: none;
     cursor: pointer;
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .pay{

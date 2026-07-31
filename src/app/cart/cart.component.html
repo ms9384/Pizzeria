@@ -6,7 +6,11 @@
 
     <div class="cart-item" *ngFor="let item of cartItems">
 
-      <img [src]="item.pizza.image">
+      <img class="pizza-image" [src]="item.pizza.image">
+
+      <div class="pizza-type">  
+      <img  [src]="getType(item.pizza)">
+      </div> 
 
       <div class="details">
 
@@ -54,11 +58,9 @@
         {{ getItemTotal(item) | currency:'INR' }}
       </div>
 
-      <button
-        class="delete"
-        (click)="remove(item)">
-        🗑
-      </button>
+      <div>
+         <img class="delete" (click)="remove(item)" src="../../assets/images/dustbin.png">    
+      </div>
 
     </div>
 
@@ -89,7 +91,7 @@
     <hr>
 
     <h2>
-      Total
+      Total : 
       <span>{{ getGrandTotal() | currency:'INR' }}</span>
     </h2>
 
