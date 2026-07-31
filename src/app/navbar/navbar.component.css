@@ -45,6 +45,15 @@
     cursor: pointer;
 }
 
+.cart-count{
+    background: black;
+    color: white;
+    border-radius: 50%;
+    padding: 3px 8px;
+    font-size: 14px;
+    margin-left: 8px;
+}
+
 .cart-img img{
     width: 20px;
     margin: 7.5px 5px 0 0;

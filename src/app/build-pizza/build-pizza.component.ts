@@ -16,6 +16,7 @@ export class BuildPizzaComponent implements OnInit {
   totalCost: number = 0;
 
   selectedIngredients: Ingredients[] = [];
+  selectedPizzaID: string = '';
 
   constructor(
     private ingredientsService: IngredientsService,
@@ -25,14 +26,16 @@ export class BuildPizzaComponent implements OnInit {
   ){}
 
   ngOnInit(): void{
-    this.ingredientsService.getIngredients().subscribe({
-      next:(data)=> {
+    this.ingredientsService.getIngredients().subscribe
+      (data=> {
         this.ingredients = data;
-      },
-      error:(err)=> {
-        console.log(err);
+      });
+
+      const cart = this.cartService.getCartItems();
+
+      if(cart.length>0){
+        this.selectedPizzaID = cart[cart.length - 1].pizza.id;
       }
-    });
   }
 
   toggleIngredients(event:any, ingredient:Ingredients){
@@ -45,20 +48,16 @@ export class BuildPizzaComponent implements OnInit {
     this.totalCost=this.buildPizzaService.getTotalCost();
   }
 
-   buildPizza(){
-    const customPizza = {
-      id: Date.now().toString(),
-      type: "Custom",
-      price: this.buildPizzaService.getTotalCost(),
-      name: "Custom Pizza",
-      image: "../../assets/images/custom-pizza.jpg" ,
-      description: "Pizza built by the customer",
-      ingredients: this.buildPizzaService.getSelectedIngredients().map(i=>i.tname).join(","), 
-      topping: []
-    };
+  buildPizza(){
+    this.cartService.applyIngredients(
+      this.selectedPizzaID,
 
-    this.cartService.addToCart(customPizza);
-    this.router.navigate(['/cart']);
+    this.buildPizzaService.getSelectedIngredients()
+    );
+
+    this.buildPizzaService.clearingIngredients();
+    
+    this.router.navigate(['./cart']);
   }
   
 }

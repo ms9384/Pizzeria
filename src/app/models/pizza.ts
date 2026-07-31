@@ -1,3 +1,5 @@
+import { Ingredients } from "./ingredients";
+
 export interface Pizza{
     id: string;
     type: string;
@@ -7,4 +9,8 @@ export interface Pizza{
     description: string;
     ingredients: string;
     topping: string[];
+
+    quantity?:number;
+
+    extraIngredients?: Ingredients[];
 }

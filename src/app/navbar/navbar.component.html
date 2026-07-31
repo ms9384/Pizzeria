@@ -18,7 +18,10 @@
         <div class="cart-img">
             <img src="assets/images/cart-white.png" title="cart image">
         </div> 
-        Shopping Cart
+        Shopping Cart 
+        <span class="cart-count">
+            {{ cartService.getCartCount() }}
+        </span>
     </button>
    </div>
 </nav>
