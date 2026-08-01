@@ -14,6 +14,7 @@ export interface CartItem{
 export class CartService {
 
   private cartItems: CartItem[] = [];
+  private lastOrder: CartItem[] = [];
   
   addToCart(pizza:Pizza){
     const existingItem = this.cartItems.find(item=>item.pizza.id===pizza.id);
@@ -89,5 +90,13 @@ export class CartService {
     if(item){
       item.extraIngredients = ingredients
     }
+  }
+
+  saveOrder(){
+  this.lastOrder=[...this.cartItems];
+  }
+
+   getLastOrder():CartItem[]{
+    return this.lastOrder;
   }
 }

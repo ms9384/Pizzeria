@@ -209,20 +209,26 @@
     background: #f8b400;
     color: black;
     margin-left: 70px;
+    transition: all 0.3s ease-in-out;
 }
 
 .clear{
-    background: #23252d;
-    color: white;
+    background: black;
+    color: #f8b400;
+    transition: all 0.3s ease-in-out;
     margin-right: 70px;
 }
 
 .pay:hover{
-    background: #e4a300;
+    background: black;
+    color: white;
+    transform: scale(1.05);
 }
 
 .clear:hover{
-    background: #111;
+    background: #f8b400;
+    color: white;
+    transform: scale(1.05);
 }
 
 .button-group{

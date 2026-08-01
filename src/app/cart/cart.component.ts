@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartItem, CartService } from '../cart.service';
 import { Pizza } from '../models/pizza';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -11,9 +12,10 @@ export class CartComponent implements OnInit {
 
   cartItems: CartItem[] = [];
   expandedItem: CartItem | null=null;
-
+  
   constructor(
-    private cartService: CartService
+    private cartService: CartService,
+    private router: Router
   ) {}
 
   loadCart(){
@@ -78,8 +80,10 @@ export class CartComponent implements OnInit {
   }
 
   pay() {
-    alert("Payment Successful!");
-    this.clearCart();
+    alert('Payment successful!');
+    this.cartService.saveOrder();
+    this.cartService.clearCart();
+    this.router.navigate(['/order-summary']);
   }
 
   getType(pizza:Pizza){

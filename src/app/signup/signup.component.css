@@ -45,7 +45,7 @@
 }
 
 .auth-box button:hover {
-    background: #e5a400;
+    background: #f8b400;
 }
 
 .error {
@@ -59,7 +59,7 @@
 }
 
 .switch a {
-    color: #f0a800;
+    color: #f8b400;
     font-weight: bold;
     cursor: pointer;
 }

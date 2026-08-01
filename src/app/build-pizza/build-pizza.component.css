@@ -38,7 +38,7 @@ td:nth-child(2){
 
 td:nth-child(3){
     width: 150px;
-    color:rgb(227, 179, 22);
+    color: #f8b400;
 }
 
 table tr:nth-child(odd){
@@ -67,8 +67,8 @@ button{
     padding: 12px;
     margin: 0 0 -5px 250px;
     background-color: black;
-    color: rgb(255, 187, 0);
-    border-color: rgb(255, 187, 0);
+    color: #f8b400;
+    border-color: #f8b400;
     font-size: 18px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -78,13 +78,14 @@ button{
 }
 
 button:hover{
-    background-color: rgb(255, 187, 0);
+    background-color: #f8b400;
     color: black;
     border-color: black;
+    transform: scale(1.05);
 }
 
 footer{
-    color: rgb(227, 179, 22);
+    color: #f8b400;
     font-size: 15px;
     font-style: italic;
     text-align: center;
@@ -92,6 +93,5 @@ footer{
     margin-top: -32px;
     padding: 3px;
     align-items: center;
-    
 }
 

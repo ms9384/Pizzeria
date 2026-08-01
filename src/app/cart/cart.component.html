@@ -1,11 +1,8 @@
 <div class="cart-container">
-
   <div class="cart-left">
-
     <h2 class="cart-heading">My Cart</h2>
 
     <div class="cart-item" *ngFor="let item of cartItems">
-
       <img class="pizza-image" [src]="item.pizza.image">
 
       <div class="pizza-type">  
@@ -13,23 +10,19 @@
       </div> 
 
       <div class="details">
-
         <h4>{{ item.pizza.name }}</h4>
 
-        <p>₹{{ item.pizza.price }}</p>
+        <p>{{ item.pizza.price | currency:'INR' }}</p>
 
         <div class="ingredient-dropdown" *ngIf="item.extraIngredients.length">
-
             <button
             class="ingredient-btn"
             (click)="toggleIngredients(item)">
 
                 Ingredients ▼
-
             </button>
 
             <ul *ngIf="expandedItem===item">
-
                 <li *ngFor="let ing of item.extraIngredients">
 
                     {{ing.tname}}
@@ -37,21 +30,16 @@
                     {{ing.price | currency:'INR'}}
 
                 </li>
-
             </ul>
-
         </div>
-
       </div>
 
       <div class="quantity">
-
         <button (click)="decrease(item)">-</button>
 
         <span>{{ item.quantity }}</span>
 
         <button (click)="increase(item)">+</button>
-
       </div>
 
       <div class="price">
@@ -61,7 +49,6 @@
       <div>
          <img class="delete" (click)="remove(item)" src="../../assets/images/dustbin.png">    
       </div>
-
     </div>
 
     <div class="subtotal">
@@ -70,12 +57,10 @@
         {{ getSubTotal() | currency:'INR' }}
       </strong>
     </div>
-
   </div>
 
-
+  
   <div class="summary">
-
     <h3>The total amount of</h3>
 
     <div>
@@ -97,20 +82,9 @@
 
     <div class="button-group">
 
-      <button
-        class="pay"
-        (click)="pay()">
-        Pay
-      </button>
+      <button class="pay" [disabled]="cartItems.length === 0" (click)="pay()">Pay</button>
 
-      <button
-        class="clear"
-        (click)="clearCart()">
-        Clear
-      </button>
-
+      <button class="clear" [disabled]="cartItems.length === 0" (click)="clearCart()">Clear</button>
     </div>
-
   </div>
-
 </div>

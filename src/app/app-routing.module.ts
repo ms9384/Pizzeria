@@ -7,6 +7,7 @@ import { CartComponent } from './cart/cart.component';
 import { SplashScreenComponent } from './splash-screen/splash-screen.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
+import { OrderSummaryComponent } from './order-summary/order-summary.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'splash', pathMatch:'full'},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path:'order-pizza', component:OrderPizzaComponent},
   {path:'build-pizza', component:BuildPizzaComponent},
   {path:'cart', component:CartComponent},
+  {path:'order-summary', component:OrderSummaryComponent},
   {path:'**', redirectTo:'splash'}
 ];
 

@@ -34,7 +34,7 @@
 }
 
 .nav-cart-btn button{
-    background-color: rgb(255, 187, 0);
+    background-color: #f8b400;
     color: white;
     padding: 10px;
     display: flex;
@@ -43,6 +43,11 @@
     border: none;  
     font-size: 20px;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-cart-btn button:hover{
+  transform: scale(1.05);
 }
 
 .shopping-cart-btn{
@@ -50,11 +55,9 @@
     border:none;
     border-radius:6px;
     padding:10px 18px;
-
     display:flex;
     align-items:center;
     gap:10px;
-
     cursor:pointer;
 }
 

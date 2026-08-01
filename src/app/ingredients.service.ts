@@ -10,6 +10,7 @@ export class IngredientsService {
 
   constructor(private http: HttpClient) {}
 
+  // return ingredients data from ingredients.json in the format of the interface Ingredients
   getIngredients(): Observable<Ingredients[]>{
     return this.http.get<Ingredients[]>('assets/ingredients.json')
 }
