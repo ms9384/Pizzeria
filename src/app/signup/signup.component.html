@@ -1,30 +1,70 @@
-<div class="auth-container">
-    <div class="auth-box">
-        <h1>Create Account</h1>
+<form #signupForm="ngForm" (ngSubmit)="signup()">
+    <div class="signup-container">
+        <div class="signup-box">
+            <h1>Create Account</h1>
+            <p class="subtitle">
+                Sign up to order your favourite pizza
+            </p>
 
-        <p class="subtitle">
-            Sign up to order your favourite pizza
-        </p>
+            <input type="text" name="username" placeholder="Username" [(ngModel)]="username" #usernameCtrl="ngModel" required minlength="3">
 
-        <input type="text" placeholder="Username" [(ngModel)]="username">
+            <div class="error" *ngIf="usernameCtrl.invalid && usernameCtrl.touched">
+                <p *ngIf="usernameCtrl.errors?.['required']">
+                    Username is required.
+                </p>
 
-        <input type="email" placeholder="Email" [(ngModel)]="email">
+                <p *ngIf="usernameCtrl.errors?.['minlength']">
+                    Username must be at least 3 characters.
+                </p>
+            </div>
 
-        <input type="password" placeholder="Password" [(ngModel)]="password">
+            <input type="email" name="email" placeholder="Email" [(ngModel)]="email" #emailCtrl="ngModel" required email>
 
-        <input type="password" placeholder="Confirm Password" [(ngModel)]="confirmPassword">
+            <div class="error" *ngIf="emailCtrl.invalid && emailCtrl.touched">
+                <p *ngIf="emailCtrl.errors?.['required']">
+                    Email is required.
+                </p>
 
-        <p class="error" *ngIf="errorMessage">
-            {{ errorMessage }}
-        </p>
+                <p *ngIf="emailCtrl.errors?.['email']">
+                    Enter a valid email.
+                </p>
+            </div>
 
-        <button (click)="signup()">
-            Sign Up
-        </button>
+            <input type="password" name="password" placeholder="Password" [(ngModel)]="password" #passwordCtrl="ngModel" required minlength="6">
 
-        <p class="switch">
-            Already have an account?
-            <a routerLink="/login">Login</a>
-        </p>
+            <div class="error" *ngIf="passwordCtrl.invalid && passwordCtrl.touched">
+                <p *ngIf="passwordCtrl.errors?.['required']">
+                    Password is required.
+                </p>
+
+                <p *ngIf="passwordCtrl.errors?.['minlength']">
+                    Password must be at least 6 characters.
+                </p>
+            </div>
+
+            <input type="password" name="confirmPassword" placeholder="Confirm Password" [(ngModel)]="confirmPassword" #confirmPasswordCtrl="ngModel" required>
+
+            <div class="error" *ngIf="confirmPasswordCtrl.invalid && confirmPasswordCtrl.touched">
+                <p *ngIf="confirmPasswordCtrl.errors?.['required']">
+                    Confirm Password is required.
+                </p>
+            </div>
+
+            <div class="error" *ngIf="password && confirmPassword && password !== confirmPassword">
+                Passwords do not match.
+            </div>
+
+            <div class="error" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+            <button type="submit" [disabled]="signupForm.invalid || password !== confirmPassword">
+                Sign Up
+            </button>
+
+            <p class="switch">Already have an account?
+                <a routerLink="/login">
+                    Login
+                </a>
+            </p>
+        </div>
     </div>
-</div>
+</form>

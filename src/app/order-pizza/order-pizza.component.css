@@ -1,13 +1,13 @@
 .order-pizza{
-    display:grid;
+    display: grid;
     grid-template-columns: 1fr 0.5fr;
     gap: 10px;
     margin: 20px 100px;
 }
 
 .order-pizza-card{
-    display:flex;
-    justify-content:space-between;
+    display: flex;
+    justify-content: space-between;
     box-shadow: 2px 2px 2px 2px grey;
     padding: 10px;
     text-align: left;
@@ -81,4 +81,58 @@ button:hover{
     background-color: #000000;
     color: #f8b400;
     transform: scale(1.05);
+}
+
+footer{
+    color: #f8b400;
+    font-size: 15px;
+    font-style: italic;
+    text-align: center;
+    background-color: rgb(246, 246, 246);
+    padding: 3px;
+    align-items: center;
+}
+
+/* Tablet */
+@media (max-width:992px){
+    .order-pizza{
+        grid-template-columns:1fr;
+        margin:20px;
+    }
+
+    .order-pizza-card{
+        gap:15px;
+    }
+}
+
+/* Mobile */
+@media (max-width:768px){
+    .order-pizza-card{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+    }
+
+    .order-pizza-details1,
+    .order-pizza-details2{
+        margin:0;
+        text-align:center;
+    }
+
+    .order-pizza-type{
+        margin:10px auto;
+    }
+
+    .order-pizza-price{
+        margin-top:15px;
+    }
+
+    .order-pizza-img img{
+        width:180px;
+    }
+
+    button{
+        width:100%;
+        justify-content:center;
+    }
 }

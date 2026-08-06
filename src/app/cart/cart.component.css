@@ -126,8 +126,9 @@
 }
 
 .summary{
-    width: 500px;
-    height: 300px;
+    width: 450px;
+    min-height: 500px;
+    height: auto;
     border: 1px solid #d8d8d8;
     background: white;
     box-shadow: 1px 1px 3px 2px #9ba5b0;
@@ -155,36 +156,72 @@
     border-top: 1px solid #ddd;
 }
 
-.summary h2{
+.summary h1{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 20px;
-    margin-left: 200px;
-    font-size: 34px;
-    
+    margin: 0;
+    font-size: 30px;
 }
 
-.ingredient-dropdown{
-    margin-top:10px;
+.summary h2{
+    font-size: 15px;
+    font-weight: 400;
 }
 
-.ingredient-btn{
-    background:none;
-    border:none;
-    cursor:pointer;
-    font-size:15px;
-    font-weight:bold;
-    color:#444;
-    padding:0;
+.ingredient-dropdown-summary{
+    padding: 0 20px 15px 0;
 }
 
-.ingredient-dropdown ul{
-    margin-top:8px;
-    padding-left:18px;
+.ingredient-dropdown-summary .ingredient-content{
+    display: block;
 }
 
-.ingredient-dropdown li{
-    margin-bottom:5px;
+.ingredient-content{
+    margin-top: 15px;
+}
+
+.ingredient-content h2{
+    font-size: 16px;
+    font-weight: 600;
+    margin: 10px 0 5px 0;
+}
+
+.ingredient-content ul{
+    margin: 0 0 15px 20px;
+    padding: 0;
+}
+
+.ingredient-content li{
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.ingredient-content>div{
+    border-bottom: 1px solid #616161;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.ingredient-dropdown-summary .ingredient-btn{
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    color: #444;
+    padding: 0;
+}
+
+.ingredient-dropdown-summary ul{
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.ingredient-dropdown-summary li{
+    margin-bottom: 5px;
+    font-size: 15px;
 }
 
 .subtotal{
@@ -208,7 +245,6 @@
 .pay{
     background: #f8b400;
     color: black;
-    margin-left: 70px;
     transition: all 0.3s ease-in-out;
 }
 
@@ -216,7 +252,7 @@
     background: black;
     color: #f8b400;
     transition: all 0.3s ease-in-out;
-    margin-right: 70px;
+    
 }
 
 .pay:hover{
@@ -234,5 +270,153 @@
 .button-group{
     display: flex;
     justify-content: space-evenly;
-    margin: 20px 0;
+    margin: 20px 50px;
+}
+
+footer{
+    color: #f8b400;
+    font-size: 15px;
+    font-style: italic;
+    text-align: center;
+    background: #f6f6f6;
+    padding: 12px;
+    margin-top: 50px;
+    border-top: 1px solid #ddd;
+}
+
+/* Tablet */
+@media (max-width:992px){
+    .cart-container{
+        flex-direction:column;
+    }
+
+    .cart-left{
+        width:100%;
+    }
+
+    .summary{
+        width:100%;
+    }
+
+    .button-group{
+        justify-content:center;
+        gap:20px;
+    }
+}
+
+/* Mobile */
+@media (max-width:768px){
+    .cart-container{
+        width:95%;
+        margin:20px auto;
+    }
+
+    .cart-heading{
+        font-size:28px;
+        text-align:center;
+    }
+
+    .cart-item{
+        flex-direction:column;
+        text-align:center;
+        gap:15px;
+    }
+
+    .cart-item img{
+        width:90px;
+        height:90px;
+    }
+
+    .pizza-type img{
+        margin:0;
+    }
+
+    .details h4,
+    .details p{
+        margin:0;
+        text-align:center;
+    }
+
+    .quantity{
+        justify-content:center;
+    }
+
+    .price{
+        width:auto;
+        font-size:22px;
+    }
+
+    .subtotal{
+        text-align:center;
+        font-size:20px;
+    }
+
+    .summary{
+        width:100%;
+        min-height:auto;
+    }
+
+    .summary h3{
+        text-align:center;
+    }
+
+    .summary h2{
+        font-size:26px;
+    }
+
+    .button-group{
+        flex-direction:column;
+        align-items:center;
+        gap:15px;
+    }
+
+    .pay,
+    .clear{
+        width:220px;
+        margin:0;
+    }
+}
+
+/* Small Devices */
+@media (max-width:480px){
+    .cart-heading{
+        font-size:24px;
+    }
+
+    .details h4{
+        font-size:18px;
+    }
+
+    .details p{
+        font-size:17px;
+    }
+
+    .quantity button{
+        width:40px;
+        height:40px;
+    }
+
+    .quantity span{
+        width:40px;
+        height:40px;
+    }
+
+    .price{
+        font-size:20px;
+    }
+
+    .summary div{
+        font-size:18px;
+        padding:15px;
+    }
+
+    .summary h2{
+        font-size:22px;
+    }
+
+    .pay,
+    .clear{
+        width:100%;
+        max-width:250px;
+    }
 }

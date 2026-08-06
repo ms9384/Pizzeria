@@ -8,12 +8,10 @@ import { AuthenticationService } from '../authentication.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
-
   username = '';
   email = '';
   password = '';
   confirmPassword = '';
-
   errorMessage = '';
 
   constructor(
@@ -22,17 +20,6 @@ export class SignupComponent {
   ) {}
 
   signup(): void {
-
-    if (
-      !this.username ||
-      !this.email ||
-      !this.password ||
-      !this.confirmPassword
-    ) {
-      this.errorMessage = 'Please fill all the fields.';
-      return;
-    }
-
     if (this.password !== this.confirmPassword) {
       this.errorMessage = 'Passwords do not match.';
       return;
@@ -44,7 +31,7 @@ export class SignupComponent {
       this.password
     );
 
-    alert('Signup successful!');
+    alert('Signup Successful!');
 
     this.router.navigate(['/login']);
   }

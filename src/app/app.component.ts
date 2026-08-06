@@ -39,7 +39,6 @@ export class AppComponent {
             !publicPages.includes(currentUrl) &&
             this.authenticationService.isLoggedIn();
         }
-
       });
   }
 }

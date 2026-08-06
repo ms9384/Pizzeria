@@ -21,7 +21,7 @@
     "id": 104,
     "tname": "Black olive",
     "price": 50,
-    "image": "../../assets/images/black-olives.png"
+    "image": "https://www.shutterstock.com/image-photo/marinated-black-olive-rings-whole-600w-2622785629.jpg"
   },
   {
     "id": 105,
@@ -49,7 +49,7 @@
   },
   {
     "id": 119,
-    "tname": "Red peprika",
+    "tname": "Red paprika",
     "price": 30,
     "image": "https://thumb9.shutterstock.com/display_pic_with_logo/676765/343609895/stock-photo-chili-pepper-isolated-on-a-white-background-343609895.jpg"
   },

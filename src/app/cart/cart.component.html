@@ -6,32 +6,13 @@
       <img class="pizza-image" [src]="item.pizza.image">
 
       <div class="pizza-type">  
-      <img  [src]="getType(item.pizza)">
+      <img [src]="getType(item.pizza)">
       </div> 
 
       <div class="details">
         <h4>{{ item.pizza.name }}</h4>
 
         <p>{{ item.pizza.price | currency:'INR' }}</p>
-
-        <div class="ingredient-dropdown" *ngIf="item.extraIngredients.length">
-            <button
-            class="ingredient-btn"
-            (click)="toggleIngredients(item)">
-
-                Ingredients ▼
-            </button>
-
-            <ul *ngIf="expandedItem===item">
-                <li *ngFor="let ing of item.extraIngredients">
-
-                    {{ing.tname}}
-
-                    {{ing.price | currency:'INR'}}
-
-                </li>
-            </ul>
-        </div>
       </div>
 
       <div class="quantity">
@@ -54,7 +35,7 @@
     <div class="subtotal">
       <strong>
         Sub Total :
-        {{ getSubTotal() | currency:'INR' }}
+        {{ getPizzaTotal() | currency:'INR' }}
       </strong>
     </div>
   </div>
@@ -73,18 +54,41 @@
       <span>{{ getIngredientTotal() | currency:'INR' }}</span>
     </div>
 
+    <div class="ingredient-dropdown-summary">
+      <button
+          class="ingredient-btn"
+          (click)="showIngredients = !showIngredients">
+          View Ingredients ▼
+      </button>
+      
+      <div *ngIf="showIngredients" class="ingredient-content">
+          <div *ngFor="let item of cartItems">
+              <h2>{{ item.pizza.name }} - </h2>
+              <ul>
+                <li *ngFor="let ing of item.extraIngredients">
+                    {{ ing.tname }} - {{ ing.price | currency:'INR' }}
+                </li>
+              </ul>
+              <h2 *ngIf="item.extraIngredients.length===0">No Extra Ingredients</h2>
+          </div>
+      </div>
+    </div>
+
     <hr>
 
-    <h2>
+    <h1>
       Total : 
       <span>{{ getGrandTotal() | currency:'INR' }}</span>
-    </h2>
+    </h1>
 
     <div class="button-group">
-
       <button class="pay" [disabled]="cartItems.length === 0" (click)="pay()">Pay</button>
-
       <button class="clear" [disabled]="cartItems.length === 0" (click)="clearCart()">Clear</button>
     </div>
   </div>
 </div>
+
+<footer>
+  Copyrights &copy; 2017 Pizzeria. All rights reserved.
+</footer>
+

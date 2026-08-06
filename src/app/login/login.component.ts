@@ -11,7 +11,6 @@ export class LoginComponent {
 
   email = '';
   password = '';
-
   errorMessage = '';
 
   constructor(
@@ -19,26 +18,18 @@ export class LoginComponent {
     private router: Router
   ) {}
 
-  login(): void {
-
-    if (!this.email || !this.password) {
-      this.errorMessage = 'Please enter email and password.';
-      return;
-    }
-
+  login() {
     const success = this.authService.login(
       this.email,
       this.password
     );
 
-    if (success) {
-
+    if(success){
+      this.errorMessage = '';
       this.router.navigate(['/home']);
-
-    } else {
-
-      this.errorMessage = 'Invalid email or password.';
-
+    }
+    else{
+      this.errorMessage = 'Invalid email or password';
     }
   }
 }

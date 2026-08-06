@@ -37,24 +37,35 @@
 
 .our-chefs{
     display: flex;
-    margin: 0px 75px;
+    align-items: center;
+    gap: 40px;
+    margin: 0 75px;
+}
+
+.our-chefs>div:first-child{
+    flex: 1;
+}
+
+.our-chefs img{
+    flex: 1;
+    margin-bottom: 5px;
 }
 
 .our-chefs-heading{
     font-size: 25px;
     text-align: left;
-    margin: 145px 100px 0 0;
 }
 
 .our-chefs-content{
     text-align: justify;
     line-height: 25px;
-    margin: 30px 95px 0 0;
 }
 
 .our-chefs-img img{
-    width: 600px;
-    margin-right: 85px;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
 }
 
 .delivery{
@@ -72,5 +83,134 @@
     font-size: 25px;
     text-align: center;
     margin: 195px 0 0 102px;
+}
 
+footer{
+    color: #f8b400;
+    font-size: 15px;
+    font-style: italic;
+    text-align: center;
+    background-color: rgb(246, 246, 246);
+    padding: 3px;
+    align-items: center;
+}
+
+/* Tablet */
+@media (max-width: 992px){
+    .our-story-content{
+        margin:0 40px;
+    }
+
+    .ingredients,
+    .our-chefs,
+    .delivery{
+        margin:40px;
+        gap:30px;
+        align-items:center;
+    }
+
+    .our-chefs{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .ingredients-img img,
+    .delivery-img img{
+        width: 400px;
+        height: auto;
+    }
+
+    .our-chefs-img img{
+        max-width: 100%;
+    }
+
+    .ingredients-heading,
+    .delivery-heading{
+        margin: 0;
+    }
+
+    .ingredients-content{
+        margin: 20px 0 0;
+    }
+
+    .our-chefs-heading{
+        margin: 20px 0;
+    }
+
+    .our-chefs-content{
+        text-align: justify;
+    }
+}
+
+/* Mobile */
+@media (max-width:768px){
+
+    .our-story-heading{
+        font-size:30px;
+    }
+
+    .our-story-content{
+        margin:0 20px;
+        text-align:left;
+    }
+
+    .ingredients,
+    .our-chefs,
+    .delivery{
+        flex-direction:column;
+        margin:30px 20px;
+        text-align:center;
+    }
+
+    .our-chefs{
+        flex-direction:column;
+        align-items:center;
+        margin:30px 20px;
+    }
+
+    .ingredients-img img,
+    .our-chefs-img img,
+    .delivery-img img{
+        width:100%;
+        max-width:450px;
+        height:auto;
+    }
+
+    .ingredients-heading,
+    .our-chefs-heading,
+    .delivery-heading{
+        margin:20px 0;
+        text-align:center;
+    }
+
+    .ingredients-content,
+    .our-chefs-content{
+        margin:0;
+        text-align:justify;
+    }
+}
+
+/* Small Mobile */
+@media (max-width:480px){
+    .our-story-heading{
+        font-size:26px;
+    }
+
+    .our-story-content{
+        margin:0 15px;
+        font-size:15px;
+        line-height:24px;
+    }
+
+    .ingredients-heading,
+    .our-chefs-heading,
+    .delivery-heading{
+        font-size:22px;
+    }
+
+    .ingredients-content,
+    .our-chefs-content{
+        font-size:15px;
+        line-height:24px;
+    }
 }

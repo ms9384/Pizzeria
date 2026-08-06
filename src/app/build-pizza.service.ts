@@ -8,9 +8,7 @@ export class BuildPizzaService {
 
   selectedIngredients: Ingredients[]= [];
 
-
   constructor() {}
-
   addIngredients(ingredient: Ingredients){
 
     const exists = this.selectedIngredients.find(item=>item.id===ingredient.id);

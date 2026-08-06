@@ -15,6 +15,7 @@ export class CartService {
 
   private cartItems: CartItem[] = [];
   private lastOrder: CartItem[] = [];
+ 
   
   addToCart(pizza:Pizza){
     const existingItem = this.cartItems.find(item=>item.pizza.id===pizza.id);
@@ -72,7 +73,6 @@ export class CartService {
     return this.getPizzaTotal()+this.getIngredientsTotal();
   }
  
-
   getCartCount():number{
     return this.cartItems.reduce((count,item)=>{
       return count+item.quantity},0);
@@ -82,7 +82,6 @@ export class CartService {
     pizzaID: string,
     ingredients: Ingredients[]
   ){
-
     const item = this.cartItems.find(
       cart => cart.pizza.id === pizzaID
     );

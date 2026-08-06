@@ -8,10 +8,11 @@ import { Router } from '@angular/router';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent implements OnInit {
 
+export class CartComponent implements OnInit {
   cartItems: CartItem[] = [];
   expandedItem: CartItem | null=null;
+  showIngredients = false;
   
   constructor(
     private cartService: CartService,
@@ -44,15 +45,6 @@ export class CartComponent implements OnInit {
     this.loadCart();
   }
 
-  toggleIngredients(item: CartItem){
-    if(this.expandedItem===item){
-      this.expandedItem=null;
-    }
-    else{
-      this.expandedItem=item;
-    }
-  }
-
   getPizzaTotal():number {
     return this.cartService.getPizzaTotal();
   }
@@ -66,7 +58,7 @@ export class CartComponent implements OnInit {
       return sum + Number(ing.price);
     },0);
 
-    return (Number(item.pizza.price) + ingredientTotal) * item.quantity;
+    return (Number(item.pizza.price)) * item.quantity;
   }
 
   getSubTotal():number{

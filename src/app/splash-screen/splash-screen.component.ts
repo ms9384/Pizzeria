@@ -24,6 +24,5 @@ export class SplashScreenComponent implements OnInit{
       }
     }, 3000);
   }
-
   caption: string = "Delectable pizzas, made your way";
 }

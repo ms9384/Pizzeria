@@ -1,15 +1,17 @@
 .confirmation{
-    width:700px;
-    margin:60px auto;
-    background:white;
-    padding:40px;
-    border:1px solid #ddd;
-    text-align:center;
+    width: 90%;
+    max-width: 700px;
+    margin: 60px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
 }
 
 .confirmation h1{
     color: black;
-    margin-bottom:10px;
+    margin-bottom: 10px;
 }
 
 .confirmation h2{
@@ -21,23 +23,92 @@
 }
 
 .order-item{
-    display:flex;
-    justify-content:space-between;
-    padding:12px 0;
-    border-bottom:1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
 }
 
 button{
-    margin-top:30px;
-    background:#f8b400;
-    border:none;
-    padding:14px 28px;
-    cursor:pointer;
-    font-size:18px;
-    border-radius:5px;
+    margin-top: 30px;
+    background: #f8b400;
+    border: none;
+    padding: 14px 28px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
     transition: all 0.3s ease-in-out;
 }
 
 button:hover{
     transform: scale(1.05);
+}
+
+footer{
+    color: #f8b400;
+    font-size: 15px;
+    font-style: italic;
+    text-align: center;
+    background-color: rgb(246, 246, 246);
+    padding: 3px;
+    align-items: center;
+    margin-top: 180px;
+}
+
+/* Tablets */
+@media (max-width:768px){
+    .confirmation{
+        padding: 30px 20px;
+        margin: 40px auto;
+    }
+
+    .confirmation h1{
+        font-size: 30px;
+    }
+
+    .confirmation h2{
+        font-size: 28px;
+    }
+
+    .confirmation h3{
+        font-size: 22px;
+    }
+
+    .confirmation p{
+        font-size: 17px;
+    }
+
+    button{
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Mobile */
+@media (max-width:480px){
+    .confirmation{
+        padding: 25px 15px;
+    }
+
+    .confirmation h1{
+        font-size: 24px;
+    }
+
+    .confirmation h2{
+        font-size: 22px;
+    }
+
+    .confirmation h3{
+        font-size: 18px;
+    }
+
+    .confirmation p{
+        font-size: 15px;
+    }
+
+    button{
+        width: 100%;
+        font-size: 16px;
+        padding: 12px;
+    }
 }

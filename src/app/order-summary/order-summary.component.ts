@@ -10,7 +10,7 @@ export class OrderSummaryComponent{
 
   orderItems: CartItem[] = [];
 
-  deliveryTime = '30-40 mins';
+  deliveryTime = '30 - 40 mins';
 
   constructor(){}
 }

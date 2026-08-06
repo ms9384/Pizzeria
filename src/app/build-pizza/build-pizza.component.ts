@@ -12,10 +12,7 @@ import { Router } from '@angular/router';
 })
 export class BuildPizzaComponent implements OnInit {
   ingredients: Ingredients[] = [];
-
   totalCost: number = 0;
-
-  selectedIngredients: Ingredients[] = [];
   selectedPizzaID: string = '';
 
   constructor(
@@ -51,13 +48,11 @@ export class BuildPizzaComponent implements OnInit {
   buildPizza(){
     this.cartService.applyIngredients(
       this.selectedPizzaID,
-
-    this.buildPizzaService.getSelectedIngredients()
+      this.buildPizzaService.getSelectedIngredients()
     );
 
     this.buildPizzaService.clearingIngredients();
     
     this.router.navigate(['./cart']);
   }
-  
 }
